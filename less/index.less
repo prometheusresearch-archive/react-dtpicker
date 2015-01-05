@@ -1,0 +1,369 @@
+@unitWidth: 32px;
+@unitHeight: 32px;
+@fullWidth: @unitWidth * 7;
+@calendarDetailsHeight: @unitHeight * 7;
+@selectColor: #428bca;
+@selectTextColor: white;
+@hoverColor: fadeout(@selectColor, 90%);
+@fontFamily: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+
+.selectable() {
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        background-color: @hoverColor;
+    }
+
+    &.dtpicker-selected {
+        background-color: @selectColor;
+        color: @selectTextColor;
+        text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    }
+}
+
+
+
+@font-face {
+	font-family: 'icomoon';
+	src: data-uri('../fonts/icomoon.eot') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: data-uri('application/x-font-ttf;charset=utf-8;base64', '../fonts/icomoon.ttf') format('truetype'),
+         data-uri('application/font-woff;charset=utf-8;base64', '../fonts/icomoon.woff') format('woff'),
+         data-uri('image/svg+xml;charset=utf-8;base64', '../fonts/icomoon.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon() {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    color: @selectColor;
+}
+
+.icon-clock() {
+    .icon();
+	content: "\e600";
+}
+.icon-calendar() {
+    .icon();
+	content: "\e601";
+}
+.icon-cancel-circle() {
+    .icon();
+	content: "\e602";
+}
+.icon-checkmark-circle() {
+    .icon();
+	content: "\e603";
+}
+.icon-arrow-up() {
+    .icon();
+	content: "\e604";
+}
+.icon-arrow-right() {
+    .icon();
+	content: "\e605";
+}
+.icon-arrow-down() {
+    .icon();
+	content: "\e606";
+}
+.icon-arrow-left() {
+    .icon();
+	content: "\e607";
+}
+
+
+
+.dtpicker-calendar {
+    font-family: @fontFamily;
+    font-size: 16px;
+    width: @fullWidth;
+}
+
+.dtpicker-calendarControls {
+    width: @fullWidth;
+
+    .dtpicker-calendarNav, .dtpicker-calendarLabel {
+        display: inline-block;
+        border-radius: 4px;
+
+        &:hover {
+            background-color: @hoverColor;
+        }
+    }
+
+    .dtpicker-calendarNav {
+        width: 15%;
+        height: @unitHeight;
+        line-height: @unitHeight;
+        text-align: center;
+        cursor: pointer;
+
+        &.dtpicker-calendarPrevious .dtpicker-buttonLabel::before {
+            .icon-arrow-left();
+        }
+
+        &.dtpicker-calendarNext .dtpicker-buttonLabel::before {
+            .icon-arrow-right();
+        }
+    }
+
+    .dtpicker-calendarLabel {
+        width: 70%;
+        height: @unitHeight;
+        line-height: @unitHeight;
+        text-align: center;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}
+
+
+.dtpicker-calendarDetails {
+    width: @fullWidth;
+    height: @calendarDetailsHeight;
+}
+
+.dtpicker-dayLabel {
+    display: inline-block;
+    width: @unitWidth;
+    height: @unitHeight;
+    line-height: @unitHeight;
+    text-align: center;
+}
+
+.dtpicker-day {
+    .selectable();
+    width: @unitWidth;
+    height: @unitHeight;
+    line-height: @unitHeight;
+    color: #ccc;
+
+    &.dtpicker-current {
+        color: black;
+
+        &.dtpicker-selected {
+            color: @selectTextColor;
+        }
+    }
+}
+
+.dtpicker-year > .dtpicker-month {
+    .selectable();
+    width: @fullWidth / 3;
+    height: @calendarDetailsHeight / 4;
+    line-height: @calendarDetailsHeight / 4;
+}
+
+.dtpicker-decade > .dtpicker-year {
+    .selectable();
+    width: @fullWidth / 2;
+    height: @calendarDetailsHeight / 5;
+    line-height: @calendarDetailsHeight / 5;
+}
+
+.dtpicker-century > .dtpicker-decade {
+    .selectable();
+    width: @fullWidth / 2;
+    height: @calendarDetailsHeight / 5;
+    line-height: @calendarDetailsHeight / 5;
+}
+
+
+
+.dtpicker-clock {
+    font-family: @fontFamily;
+    font-size: 16px;
+    width: @fullWidth;
+}
+
+.dtpicker-clockDetails {
+    text-align: center;
+
+    .dtpicker-dial {
+        display: inline-block;
+        width: @fullWidth / 4;
+        text-align: center;
+
+        .dtpicker-dialAdjust {
+            height: @unitHeight;
+            line-height: @unitHeight;
+        }
+
+        .dtpicker-display {
+            height: @unitHeight;
+            line-height: @unitHeight;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: @hoverColor;
+            }
+        }
+    }
+}
+
+.dtpicker-dialAdjust {
+    border-radius: 4px;
+    cursor: pointer;
+
+    &.dtpicker-dialIncrement .dtpicker-buttonLabel::before {
+        .icon-arrow-up();
+    }
+
+    &.dtpicker-dialDecrement .dtpicker-buttonLabel::before {
+        .icon-arrow-down();
+    }
+
+    &:hover {
+        background-color: @hoverColor;
+    }
+}
+
+.dtpicker-clockChoice {
+    .dtpicker-choice {
+        .selectable();
+        width: @fullWidth / 3;
+        height: @unitHeight;
+        line-height: @unitHeight;
+    }
+}
+
+.dtpicker-clockSeparator {
+    display: inline-block;
+    width: 5px;
+    text-align: center;
+    vertical-align: top;
+
+    .dtpicker-separatorLabel {
+        line-height: @unitHeight * 3;
+
+        &::before {
+            content: ':';
+        }
+    }
+}
+
+.dtpicker-ampm {
+    display: inline-block;
+    width: (@fullWidth / 4) - 10px;
+    text-align: center;
+    vertical-align: top;
+
+    .dtpicker-toggle {
+        padding: 5px;
+        border-radius: 4px;
+        line-height: @unitHeight * 3;
+
+        &:hover {
+            background-color: @hoverColor;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+.dtpicker-pickerDisplay {
+    width: @fullWidth;
+    height: 2em;
+    line-height: 18px;
+    padding: 4px;
+
+    font-family: @fontFamily;
+    font-size: 14px;
+    text-align: center;
+
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    box-sizing: border-box;
+
+    cursor: pointer;
+}
+
+.dtpicker-pickerSelector {
+    position: absolute;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: none;
+    margin-top: 3px;
+    z-index: 1000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s, box-shadow 0.2s;
+
+    &.dtpicker-active {
+        box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.25);
+        transition: max-height 0.4s, box-shadow 0.2s;
+
+        .dtpicker-datePicker & {
+            max-height: @calendarDetailsHeight + (@unitHeight * 2);
+        }
+
+        .dtpicker-dateTimePicker & {
+            max-height: @calendarDetailsHeight + (@unitHeight * 3);
+        }
+
+        .dtpicker-timePicker & {
+            max-height: @unitHeight * 4;
+        }
+    }
+}
+
+.dtpicker-pickerConfirm {
+    .selectable();
+    width: @fullWidth / 2;
+    height: @unitHeight;
+    line-height: @unitHeight;
+
+    .dtpicker-buttonLabel::before {
+        .icon-checkmark-circle();
+    }
+}
+
+.dtpicker-pickerClear {
+    .selectable();
+    width: @fullWidth / 2;
+    height: @unitHeight;
+    line-height: @unitHeight;
+
+    .dtpicker-buttonLabel::before {
+        .icon-cancel-circle();
+    }
+}
+
+.dtpicker-calendarClockMode {
+    .selectable();
+    width: @fullWidth;
+    height: @unitHeight;
+    line-height: @unitHeight;
+
+    &.dtpicker-calendarMode .dtpicker-buttonLabel::before {
+        .icon-clock();
+    }
+
+    &.dtpicker-clockMode .dtpicker-buttonLabel::before {
+        .icon-calendar();
+    }
+}
+

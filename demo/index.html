@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>react-dtpicker Demonstrations</title>
+
+    <script type="text/javascript" src="../bower_components/react/react.js"></script>
+    <script type="text/javascript" src="../bower_components/react/JSXTransformer.js"></script>
+
+    <script type="text/javascript" src="../dist/react-dtpicker.js"></script>
+    <link type="text/css" rel="stylesheet" href="../dist/react-dtpicker.css"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <style type="text/css">
+        h1 {
+            margin-bottom: 2em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>react-dtpicker Demonstrations</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-1">
+            <h3>Basic Date Picker</h3>
+        </div>
+        <div class="col-xs-4">
+            <div id="datepicker"></div>
+            <script type="text/jsx">
+                React.render(
+                    <ReactDTPicker.DatePicker />,
+                    document.getElementById('datepicker')
+                );
+            </script>
+        </div>
+
+        <div class="col-xs-4">
+            <pre class="well">
+React.render(
+    &lt;ReactDTPicker.DatePicker /&gt;,
+    document.getElementById('datepicker')
+);</pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-1">
+            <h3>Basic Time Picker</h3>
+        </div>
+        <div class="col-xs-4">
+            <div id="timepicker"></div>
+            <script type="text/jsx">
+                React.render(
+                    <ReactDTPicker.TimePicker />,
+                    document.getElementById('timepicker')
+                );
+            </script>
+        </div>
+
+        <div class="col-xs-4">
+            <pre class="well">
+React.render(
+    &lt;ReactDTPicker.TimePicker /&gt;,
+    document.getElementById('timepicker')
+);</pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-1">
+            <h3>Basic Date/Time Picker</h3>
+        </div>
+        <div class="col-xs-4">
+            <div id="datetimepicker"></div>
+            <script type="text/jsx">
+                React.render(
+                    <ReactDTPicker.DateTimePicker />,
+                    document.getElementById('datetimepicker')
+                );
+            </script>
+        </div>
+
+        <div class="col-xs-4">
+            <pre class="well">
+React.render(
+    &lt;ReactDTPicker.DateTimePicker /&gt;,
+    document.getElementById('datetimepicker')
+);</pre>
+        </div>
+    </div>
+
+</div>
+
+
+<!--
+<table>
+    <tbody>
+        <tr>
+            <td><div id="calendar" class="selector"></div></td>
+            <td><div id="clock" class="selector"></div></td>
+            <td><div id="clock2" class="selector"></div></td>
+            <td><div id="clock3" class="selector"></div></td>
+        </tr>
+        <tr>
+            <td><div id="calendar-selected" class="selected"></div></td>
+            <td><div id="clock-selected" class="selected"></div></td>
+            <td><div id="clock2-selected" class="selected"></div></td>
+            <td><div id="clock3-selected" class="selected"></div></td>
+        </tr>
+    </tbody>
+</table>-->
+            
+<script type="text/jsx">
+/* 
+    React.renderComponent(
+        ReactDTPicker.Calendar({
+            onSelect: function (selectedDate) {
+                document.getElementById('calendar-selected').innerHTML = selectedDate.toString();
+            }
+        }),
+        document.getElementById('calendar')
+    );
+
+    React.renderComponent(
+        ReactDTPicker.Clock({
+            onSelect: function (selectedDate) {
+                document.getElementById('clock-selected').innerHTML = selectedDate.toString();
+            }
+        }),
+        document.getElementById('clock')
+    );
+
+    React.renderComponent(
+        ReactDTPicker.Clock({
+            twentyFourHour: true,
+            onSelect: function (selectedDate) {
+                document.getElementById('clock2-selected').innerHTML = selectedDate.toString();
+            }
+        }),
+        document.getElementById('clock2')
+    );
+
+    React.renderComponent(
+        ReactDTPicker.Clock({
+            twentyFourHour: false,
+            showSeconds: false,
+            onSelect: function (selectedDate) {
+                document.getElementById('clock3-selected').innerHTML = selectedDate.toString();
+            }
+        }),
+        document.getElementById('clock3')
+    );*/
+</script>
+
+</body>
+</html>
+

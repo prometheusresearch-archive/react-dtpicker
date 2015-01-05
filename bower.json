@@ -1,0 +1,41 @@
+{
+  "name": "react-dtpicker",
+  "version": "0.1.0",
+  "authors": [
+    "Prometheus Research, LLC"
+  ],
+  "description": "A Date/Time-Picker React Component",
+  "license": "MIT",
+  "homepage": "https://github.com/prometheusresearch/react-dtpicker",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/prometheusresearch/react-dtpicker.git"
+  },
+  "main": [
+    "dist/react-dtpicker.js",
+    "dist/react-dtpicker.css"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "package.json",
+    "Gruntfile.js",
+    "tests",
+    "src",
+    "lib"
+  ],
+  "keywords": [
+    "react",
+    "react-component",
+    "date",
+    "time",
+    "datetime",
+    "picker",
+    "calendar"
+  ],
+  "dependencies": {
+    "react": "^0.12"
+  }
+}
+
